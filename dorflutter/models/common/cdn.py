@@ -3,8 +3,8 @@ import requests
 from furl import furl
 from io import BufferedReader
 from werkzeug.datastructures import FileStorage
-from hibike import app
-from hibike.utils.common import check_mime_type
+from dorflutter import app
+from dorflutter.utils.common import check_mime_type
 
 
 class CDN():

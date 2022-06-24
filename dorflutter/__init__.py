@@ -19,12 +19,12 @@ app = Flask(__name__)
 base_dir = os.getcwd()
 sys.path.append(base_dir)
 try:
-    app.config.from_pyfile(f"{base_dir}/hibike/default.cfg")
+    app.config.from_pyfile(f"{base_dir}/dorflutter/default.cfg")
 except FileNotFoundError:
-    f = open(f"{base_dir}/hibike/default.cfg", "w")
+    f = open(f"{base_dir}/dorflutter/default.cfg", "w")
     f.write(inspect.cleandoc("""
         SECRET_KEY="default_secret_key"
-        SQLALCHEMY_DATABASE_URI="mariadb+pymysql://root:backstart@db:3306/hibike?charset=utf8"
+        SQLALCHEMY_DATABASE_URI="mariadb+pymysql://root:backstart@db:3306/dorflutter?charset=utf8"
         JWT_SECRET_KEY="default_jwt_secret_key"
         JWT_ACCESS_TOKEN_EXPIRES=180
         """))
@@ -34,7 +34,7 @@ app.config['JSON_SORT_KEYS'] = False
 app.config['JSON_AS_ASCII'] = False
 app.config.update({
     "APISPEC_SPEC": APISpec(
-        title="hibike api",
+        title="dorflutter api",
         version="v1",
         openapi_version="2.0.0",
         plugins=[MarshmallowPlugin()],
