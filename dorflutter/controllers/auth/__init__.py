@@ -18,7 +18,7 @@ authorization_header = {
     }
 }
 
-from hibike.controllers.auth.signin import *
-from hibike.controllers.auth.signup import *
-from hibike.controllers.auth.user import *
-from hibike.controllers.auth.riding import *
+from dorflutter.controllers.auth.signin import *
+from dorflutter.controllers.auth.signup import *
+from dorflutter.controllers.auth.user import *
+

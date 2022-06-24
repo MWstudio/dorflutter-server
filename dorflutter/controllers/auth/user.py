@@ -1,24 +1,24 @@
 from flask import request, session, jsonify, send_from_directory
 from flask_apispec import doc, use_kwargs
-from hibike.models.auth import User, UserRiding
-from hibike.models.common.redis_conn import RedisConn
-from hibike.controllers.auth import (
+from dorflutter.models.auth import User, UserRiding
+from dorflutter.models.common.redis_conn import RedisConn
+from dorflutter.controllers.auth import (
     API_CATEGORY,
     auth_bp,
     authorization_header
 )
-from hibike.schema.user import (
+from dorflutter.schema.user import (
     RequestTestSchema,
     RequestSetNicknameSchema,
     RequestFileSchema,
 )
-from hibike.utils.common import (
+from dorflutter.utils.common import (
     response_json_with_code,
 )
-from hibike import db
+from dorflutter import db
 import os
 
-path = os.path.abspath("./hibike/static/image/profile")
+path = os.path.abspath("./dorflutter/static/image/profile")
 
 @auth_bp.route('/test', methods=["POST"])
 @use_kwargs(RequestTestSchema)

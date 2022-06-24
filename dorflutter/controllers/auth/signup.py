@@ -1,16 +1,16 @@
 from flask_apispec import doc, use_kwargs
 from flask_mail import Message
-from hibike.models.auth import User,UserRiding
-from hibike.models.common.redis_conn import RedisConn
-from hibike import db
-from hibike.controllers.auth import (
+from dorflutter.models.auth import User,UserRiding
+from dorflutter.models.common.redis_conn import RedisConn
+from dorflutter import db
+from dorflutter.controllers.auth import (
     API_CATEGORY,
     auth_bp
 )
-from hibike.schema.user import (
+from dorflutter.schema.user import (
     RequestSignupSchema,
 )
-from hibike.utils.common import (
+from dorflutter.utils.common import (
     response_json_with_code,
 )   
 import bcrypt

@@ -1,2 +1,1 @@
-from hibike.models.auth import *
-from hibike.models.board import *
+from dorflutter.models.auth import *

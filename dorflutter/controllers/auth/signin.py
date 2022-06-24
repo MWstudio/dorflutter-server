@@ -1,16 +1,16 @@
 from flask import request, session
 from flask_apispec import doc, use_kwargs
-from hibike import app, db
-from hibike.models.auth import User
-from hibike.models.common.redis_conn import RedisConn
-from hibike.controllers.auth import (
+from dorflutter import app, db
+from dorflutter.models.auth import User
+from dorflutter.models.common.redis_conn import RedisConn
+from dorflutter.controllers.auth import (
     API_CATEGORY,
     auth_bp
 )
-from hibike.schema.user import (
+from dorflutter.schema.user import (
     RequestSigninSchema,
 )
-from hibike.utils.common import (
+from dorflutter.utils.common import (
     response_json_with_code,
 )
 import bcrypt

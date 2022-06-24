@@ -45,21 +45,19 @@ app.config.update({
 CORS(app, supports_credentials=True)
 docs = FlaskApiSpec(app)
 
-from hibike.models import *
+from dorflutter.models import *
 db.init_app(app)
 migrate.init_app(app, db)
 
-from hibike.models.common.cdn import CDN
+from dorflutter.models.common.cdn import CDN
 cdn = CDN()
 # 도커환경에서 작업할 경우: docker=True
 cdn.set_cdn_url(app.config['CDN_URL'], docker=True)
 
 mail = Mail(app)
 
-from hibike.controllers.auth import auth_bp
-from hibike.controllers.board import board_bp
+from dorflutter.controllers.auth import auth_bp
 app.register_blueprint(auth_bp)
-app.register_blueprint(board_bp)
 
 docs.register_existing_resources()
 # 스웨거에서 options 제거

@@ -1,4 +1,4 @@
-from hibike import db, app
+from dorflutter import db, app
 
 class User(db.Model):
     __tablename__ = "user"
